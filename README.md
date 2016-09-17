@@ -1,2 +1,2 @@
 # Weather
-Weather app is for learning iOS development.
+Weather app is for iOS learning.
