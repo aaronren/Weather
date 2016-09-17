@@ -23,6 +23,10 @@
 	</citys>
 
 	<icons>
+        <icon>
+            <type>晴</type>
+            <show>weather-clear.png</show>
+        </icon>
 		<icon>
 			<type>阴</type>
 			<show>weather-broken.png</show>
@@ -43,6 +47,10 @@
 			<type>中雨</type>
 			<show>weather-shower.png</show>
 		</icon>
+        <icon>
+            <type>阵雨</type>
+            <show>weather-shower.png</show>
+        </icon>
 		<icon>
 			<type>小到中雨</type>
 			<show>weather-rain.png</show>
