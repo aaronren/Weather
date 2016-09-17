@@ -152,7 +152,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="refreshAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="poI-oF-Y5i"/>
+                                    <action selector="refreshLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3YE-sm-131"/>
                                 </connections>
                             </button>
                         </subviews>
