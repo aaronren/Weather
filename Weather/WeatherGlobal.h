@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ 从global.xml获取支持的城市图片列表，以及天气图标列表
+ */
 @interface WeatherGlobal : NSObject
 
 + (instancetype)sharedInstance;

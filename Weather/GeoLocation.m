@@ -39,6 +39,8 @@
     [self startUpdateLocation];
 }
 
+#pragma mark - 启动定位
+
 - (void)startUpdateLocation
 {
     if (self.locationManager==nil)
@@ -56,12 +58,14 @@
             [self.locationManager requestWhenInUseAuthorization];// 前台定位
         }
         [self.locationManager startUpdatingLocation];
-//        [self.locationManager requestLocation];
+        //[self.locationManager requestLocation];
     }
     else {
         // 提示用户开启定位（设置－隐私－定位）
     }
 }
+
+#pragma mark - 定位回调
 
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray<CLLocation *> *)locations
@@ -83,6 +87,8 @@
 {
     
 }
+
+#pragma mark - 反向地理编码，经纬度转地址
 
 - (void)locationToCity:(CLLocation*)location
 {

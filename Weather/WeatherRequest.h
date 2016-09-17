@@ -10,6 +10,10 @@
 
 @interface WeatherRequest : NSObject
 
+/*
+ 静态函数
+ 根据城市从后台拉取天气信息
+ */
 + (void)getWeatherWithCity:(NSString*)city
                    timeOut:(int)interval
                       done:(void(^)(NSDictionary*))done

@@ -119,13 +119,13 @@
 		9315EAA31C400EB20004AFBD /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				9315EB121C40FF650004AFBD /* CityTable */,
-				9315EADE1C40E3340004AFBD /* Request */,
-				9315EAD71C40C7700004AFBD /* Location */,
-				9315EAA71C400EB20004AFBD /* AppDelegate.h */,
-				9315EAA81C400EB20004AFBD /* AppDelegate.m */,
 				9315EAAA1C400EB20004AFBD /* ViewController.h */,
 				9315EAAB1C400EB20004AFBD /* ViewController.m */,
+				9315EAA71C400EB20004AFBD /* AppDelegate.h */,
+				9315EAA81C400EB20004AFBD /* AppDelegate.m */,
+				9315EADE1C40E3340004AFBD /* Request */,
+				9315EAD71C40C7700004AFBD /* Location */,
+				9315EB121C40FF650004AFBD /* CityTable */,
 				9315EAAD1C400EB20004AFBD /* Main.storyboard */,
 				9315EAB21C400EB20004AFBD /* LaunchScreen.storyboard */,
 				9315EAA41C400EB20004AFBD /* Supporting Files */,

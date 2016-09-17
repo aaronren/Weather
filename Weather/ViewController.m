@@ -42,6 +42,7 @@
     [super didReceiveMemoryWarning];
 }
 
+// 刷新
 - (IBAction)refreshLocation:(id)sender
 {
     [[GeoLocation sharedInstance] asyncLocationBlock:^(CLLocation *location) {
@@ -52,6 +53,7 @@
     }];
 }
 
+// 请求天气
 - (void)requestWeatherWithCity:(NSString*)city
 {
     [WeatherRequest getWeatherWithCity:city
@@ -66,6 +68,7 @@
                                 }];
 }
 
+// 刷新UI
 - (void)refreshUI:(NSDictionary*)weatherDic
 {
     self.tempLabel.text = [NSString stringWithFormat:@"%@℃",[weatherDic objectForKey:@"wendu"]];
@@ -96,6 +99,7 @@
     self.background.image = [UIImage imageNamed:backgroundName];
 }
 
+// 是否白天
 - (BOOL)isDaytime
 {
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];

@@ -26,27 +26,31 @@
     [request setTimeoutInterval:interval];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
     
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *respone,NSData *data,NSError *error) {
-        if (error==nil) {
-            if (done) {
-                NSDictionary *dic = [WeatherRequest parseXmlData:data];
-                done(dic);
-            }
-        } else {
-            if (failed) {
-                failed();
-            }
-        }
-    }];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
+                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                if (error==nil) {
+                                                    if (done) {
+                                                        NSDictionary *dic = [WeatherRequest parseXmlData:data];
+                                                        done(dic);
+                                                    }
+                                                } else {
+                                                    if (failed) {
+                                                        failed();
+                                                    }
+                                                }
+                                            }];
+    [task resume];
 }
 
+// 调用XMLDictionary解析数据
 + (NSDictionary*)parseXmlData:(NSData*)data
 {
     NSDictionary *dictionary = [NSDictionary dictionaryWithXMLData:data];
     return dictionary;
 }
 
+// 构造请求URL
 + (NSURL*)makeRequestUrl:(NSString*)city
 {
     city = [WeatherRequest trimCityString:city];
@@ -55,6 +59,7 @@
     return [NSURL URLWithString:urlStr];
 }
 
+// URL编码
 + (NSString*)URLEncodedString:(NSString*)string
 {
     CFStringRef stringRef = CFBridgingRetain(string);
@@ -67,6 +72,7 @@
     return CFBridgingRelease(encoded);
 }
 
+// 截取城市
 + (NSString*)trimCityString:(NSString*)city
 {
     if ([city hasSuffix:@"市"]) {
